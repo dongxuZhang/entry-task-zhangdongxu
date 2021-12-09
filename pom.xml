@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>entry-task-zhangdongxu</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.openstreetmap.osmosis</groupId>
+            <artifactId>osmosis-apidb</artifactId>
+            <version>0.48.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.openstreetmap.osmosis</groupId>
+            <artifactId>osmosis-areafilter</artifactId>
+            <version>0.48.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.openstreetmap.osmosis</groupId>
+            <artifactId>osmosis-pbf</artifactId>
+            <version>0.48.0</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id> central</id>
+            <name> Maven Repository Switchboard</name>
+            <layout> default</layout>
+            <url>https://repo1.maven.org/maven2/</url>
+            <snapshots>
+                <enabled> false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>osm2po</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+</project>

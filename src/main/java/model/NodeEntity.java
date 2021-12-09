@@ -1,14 +1,10 @@
 package model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class NodeEntity {
 
     private final long id;
     private double lat;
     private double lon;
-    private final Map<String, String> tags = new HashMap<>();
 
     public NodeEntity(long id) {
         this.id = id;

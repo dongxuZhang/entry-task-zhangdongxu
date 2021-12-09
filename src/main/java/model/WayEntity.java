@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import org.openstreetmap.osmosis.core.domain.v0_6.Way;
 
 public class WayEntity {
 

@@ -26,17 +26,17 @@ import org.openstreetmap.osmosis.core.task.v0_6.Sink;
 import org.springframework.util.CollectionUtils;
 import utils.CommonUtils;
 
-public class Handler implements Sink {
+public class RoadLengthHandler implements Sink {
 
-    private ExecutorService executorService;
-    private final List<Future<Double>> futures = new ArrayList<>();
     private final Map<Long, NodeEntity> nodes = new HashMap<>();
     private final HashSet<Long> ways = new HashSet<>();
     private final AtomicBoolean flag = new AtomicBoolean(true);
+    private final List<Future<Double>> futures = new ArrayList<>();
 
     private double totalLength = DOUBLE_ZERO;
     private long nodeUpdateCount = INT_ZERO;
     private double roadLength = DOUBLE_ZERO;
+    private ExecutorService executorService;
 
     public void initialize(Map<String, Object> metaData) {
         executorService = Executors.newFixedThreadPool(10);

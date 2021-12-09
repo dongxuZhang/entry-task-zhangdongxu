@@ -4,8 +4,8 @@ import static constant.CommonConstant.DOUBLE_ZERO;
 import static constant.CommonConstant.INT_ZERO;
 import static constant.CommonConstant.TAG_KEY_HIGHWAY;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -27,10 +27,10 @@ public class Handler implements Sink {
 
     private ExecutorService executorService;
     private final Map<Long, NodeEntity> nodes = new HashMap<>();
-    private final List<Long> ways = new ArrayList<>();
+    private final HashSet<Long> ways = new HashSet<>();
     private final AtomicBoolean flag = new AtomicBoolean(true);
 
-    private double totalLength = 0.0;
+    private double totalLength = DOUBLE_ZERO;
     private int nodeUpdateCount = INT_ZERO;
     private double roadLength = DOUBLE_ZERO;
 
@@ -66,7 +66,6 @@ public class Handler implements Sink {
                     ways.add(way.getId());
                 }
             } else if (ways.contains(way.getId())) {
-                long begin = System.currentTimeMillis();
                 List<WayNode> wayNodes = way.getWayNodes();
                 for (int i = 0; i < wayNodes.size() - 1; i++) {
                     NodeEntity node1 = nodes.get(wayNodes.get(i).getNodeId());
@@ -76,8 +75,6 @@ public class Handler implements Sink {
                     roadLength += result;
                     totalLength += result;
                 }
-                long end = System.currentTimeMillis();
-                System.out.println("compute cost:" + (end - begin));
             }
         }
     }

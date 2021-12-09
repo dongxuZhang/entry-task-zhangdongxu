@@ -16,7 +16,7 @@ public class TestService2 {
 //        for (int i = 0; i < 1; i++) {
 //            testService.test(i, handler);
 //        }
-        testService2.test(7, handler2);
+        testService2.test(0, handler2);
         long end = System.currentTimeMillis();
         System.out.println("totalTimeCost:" + (end - begin));
     }
